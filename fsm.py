@@ -18,7 +18,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state2(self, event):
         text = event.message.text
-        return text.lower() == "go to state2"
+        return text.lower() == "台南咖啡推薦"
 
     def is_going_to_state3(self, event):
         text = event.message.text
@@ -50,7 +50,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state2")
+        send_text_message(reply_token, "生命樹咖啡:\nhttps://zh-tw.facebook.com/lifetreesilkroadcoffee/\n")
         self.go_back()
 
     def on_exit_state2(self):

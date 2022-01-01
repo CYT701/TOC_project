@@ -118,7 +118,7 @@ def webhook_handler():
         response = machine.advance(event)
         if response == False:
             #send_text_message(event.reply_token, "Not Entering any State")
-            send_text_message(event.reply_token, "您好，輸入HELP以獲得更多資訊")
+            send_text_message(event.reply_token, "您好，輸入[說明]以獲得更多資訊")
 
     return "OK"
 
