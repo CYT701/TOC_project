@@ -50,7 +50,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "生命樹咖啡:\nhttps://www.instagram.com/lifetreecafe/\n")
+        send_text_message(reply_token, "生命樹咖啡:\n地圖:\nhttps://www.google.com/maps?q=%E7%94%9F%E5%91%BD%E6%A8%B9%E5%92%96%E5%95%A1&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjbm_P0yZH1AhUSG6YKHZj9D0sQ_AUoAXoECAEQAw\nfb:\nhttps://zh-tw.facebook.com/lifetreesilkroadcoffee/\nig:\nhttps://www.instagram.com/lifetreecafe/\n")
         self.go_back()
 
     def on_exit_state2(self):
