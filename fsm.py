@@ -49,11 +49,8 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "生命樹咖啡:\nhttps://zh-tw.facebook.com/lifetreesilkroadcoffee/")
+        send_text_message(reply_token, "生命樹咖啡:\nhttps://zh-tw.facebook.com/lifetreesilkroadcoffee/\n雷巴咖啡:\nhttps://www.rebacoffee.com/\n咖啡匙:\nhttps://www.facebook.com/cuppingspoon/")
         self.go_back()
-
-    def on_exit_state2(self):
-        print("Leaving state2")
     
     def on_enter_state3(self, event):
         print("I'm entering state3")
@@ -62,9 +59,6 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "輸入[沖煮技巧]或[台南咖啡推薦]以獲得更多資訊")
         self.go_back()
     
-    def on_exit_state3(self):
-        print("Leaving state3")
-
     def on_enter_state_lightroast(self, event):
         print("I'm entering state_lightroast")
 
@@ -86,12 +80,5 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "咖啡豆16g\n水溫:85~88度\n研磨度:二砂糖粗細略粗\n悶蒸:20秒\n手法:中水由中心注水至150cc，待濾杯中液體流下一半後再中心中水往外繞圈至240cc")
         #self.go_back()
 
-    def on_exit_state_lightroast(self):
-        print("Leaving state_lightroast")
 
-    def on_exit_state_mediumroast(self):
-        print("Leaving state_mediumroast")
-
-    def on_exit_state_mediumroast(self):
-        print("Leaving state_cityroast")
 
