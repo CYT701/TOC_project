@@ -22,6 +22,11 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "淺焙"
 
+    def is_going_to_backstate1(self, event):
+        text = event.message.text
+        #return text.lower() == "go to state1"
+        return text.lower() == "ok"
+
     def is_going_to_state2(self, event):
         text = event.message.text
         return text.lower() == "台南咖啡推薦"
@@ -47,7 +52,7 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_text_message(reply_token, "淺焙:\n水溫:90~92度\n研磨度:二砂糖粗細\n")
-        self.go_back()
+        #self.go_back()
 
     def on_exit_state_light_roast(self):
         print("Leaving state_light_roast")
