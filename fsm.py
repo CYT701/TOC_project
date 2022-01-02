@@ -12,9 +12,15 @@ class TocMachine(GraphMachine):
         #return text.lower() == "go to state1"
         return text.lower() == "沖煮技巧"
 
-    '''def is_going_to_state1_1_light_roast(self, event):
+    def is_going_to_state_user(self, event):
         text = event.message.text
-        return text.lower() == "淺焙"'''
+        #return text.lower() == "go to state1"
+        return text.lower() == "離開"
+        #self.goback()
+
+    def is_going_to_state_light_roast(self, event):
+        text = event.message.text
+        return text.lower() == "淺焙"
 
     def is_going_to_state2(self, event):
         text = event.message.text
@@ -30,27 +36,27 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         #send_text_message(reply_token, "Trigger state1")
         send_text_message(reply_token, "請輸入焙度:")
-        self.go_back()
+        #self.go_back()
 
     def on_exit_state1(self):
         print("Leaving state1")
 
 
-    def on_enter_state1_1(self, event):
-        print("I'm entering state1_1")
+    def on_enter_state_light_roast(self, event):
+        print("I'm entering state_light_roast")
 
         reply_token = event.reply_token
         send_text_message(reply_token, "淺焙:\n水溫:90~92度\n研磨度:二砂糖粗細\n")
         self.go_back()
 
-    def on_exit_state1_1(self):
-        print("Leaving state1_1")
+    def on_exit_state_light_roast(self):
+        print("Leaving state_light_roast")
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "生命樹咖啡:\n地圖:\nhttps://www.google.com/maps?q=%E7%94%9F%E5%91%BD%E6%A8%B9%E5%92%96%E5%95%A1&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjbm_P0yZH1AhUSG6YKHZj9D0sQ_AUoAXoECAEQAw\nfb:\nhttps://zh-tw.facebook.com/lifetreesilkroadcoffee/\nig:\nhttps://www.instagram.com/lifetreecafe/\n")
+        send_text_message(reply_token, "生命樹咖啡:\nhttps://zh-tw.facebook.com/lifetreesilkroadcoffee/")
         self.go_back()
 
     def on_exit_state2(self):
