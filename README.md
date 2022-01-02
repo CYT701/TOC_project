@@ -13,7 +13,7 @@ coffee
 #### QR code
 ![qrcode](./img/qrcode.png)
 ### 功能及操作
-![demo](./img/demo.jpg)
+![feature](./img/demo.jpg)
 
 將會不定時更新咖啡廳資訊!敬請期待!
 ## Finite State Machine
