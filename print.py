@@ -34,7 +34,6 @@ machine = GraphMachine(
             "conditions": "is_going_to_state_lightroast",
         },
         {"trigger": "go_back", "source": ["state_lightroast","state2", "state3"], "dest": "user"},
-        #{"trigger": "go_back", "source": "state_light_roast", "dest": "state1"},
     ],
     initial="user",
     auto_transitions=False,
