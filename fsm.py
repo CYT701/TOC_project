@@ -30,8 +30,8 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "請輸入焙度:")
         #self.go_back()
 
-    def on_exit_state1(self):
-        print("Leaving state1")
+    '''def on_exit_state1(self):
+        print("Leaving state1")'''
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
