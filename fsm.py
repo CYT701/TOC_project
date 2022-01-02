@@ -19,12 +19,20 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "說明"
 
+    def is_going_to_state_lightroast(self, event):
+        text = event.message.text
+        return text.lower() == "淺焙"
+
+    def is_going_to_state_user(self, event):
+        text = event.message.text
+        return text.lower() == "離開"
+
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
         reply_token = event.reply_token
         send_text_message(reply_token, "請輸入焙度:")
-        self.go_back()
+        #self.go_back()
 
     def on_exit_state1(self):
         print("Leaving state1")
@@ -48,3 +56,19 @@ class TocMachine(GraphMachine):
     
     def on_exit_state3(self):
         print("Leaving state3")
+
+    def on_enter_state_lightroast(self, event):
+        print("I'm entering state_lightroast")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "水溫:90度\n研磨度:二砂糖粗細")
+        self.go_back()
+
+    def on_exit_state_lightroast(self):
+        print("Leaving state_lightroast")
+
+    def on_enter_user(self, event):
+        print("I'm entering user")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "首頁")
