@@ -35,6 +35,10 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "ok"
 
+    def is_going_to_backuser(self, event):
+        text = event.message.text
+        return text.lower() == "離開"
+
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
@@ -79,6 +83,13 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         send_text_message(reply_token, "咖啡豆16g\n水溫:85~88度\n研磨度:二砂糖粗細略粗\n悶蒸:20秒\n手法:中水由中心注水至150cc，待濾杯中液體流下一半後再中心中水往外繞圈至240cc")
         #self.go_back()
+
+    def on_enter_user(self, event):
+        print("I'm entering user")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "首頁，輸入[說明]以獲得更多資訊")
+        self.go_back()
 
 
 
