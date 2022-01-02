@@ -63,8 +63,3 @@ class TocMachine(GraphMachine):
     def on_exit_state_lightroast(self):
         print("Leaving state_lightroast")
 
-    def on_enter_user(self, event):
-        print("I'm entering user")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "首頁")
