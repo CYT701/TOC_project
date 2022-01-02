@@ -7,7 +7,7 @@ import pygraphviz as pgv
 #    raise
 #import requests
 machine = GraphMachine(
-    states=["user", "state1", "state2","state3","state_lightroast","state_mediumroast"],
+    states=["user", "state1", "state2","state3","state_lightroast","state_mediumroast","state_cityroast"],
     transitions=[
         {
             "trigger": "advance",
@@ -42,10 +42,16 @@ machine = GraphMachine(
         {
             "trigger": "advance",
             "source": "state1",
+            "dest": "state_cityroast",
+            "conditions": "is_going_to_state_cityroast",
+        },
+        {
+            "trigger": "advance",
+            "source": "state1",
             "dest": "state3",
             "conditions": "is_going_to_state3",
         },
-        {"trigger": "go_back", "source": ["state_lightroast","state_mediumroast","state2", "state3"], "dest": "user"},
+        {"trigger": "go_back", "source": ["state_city_roast","state_lightroast","state_mediumroast","state2", "state3"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
