@@ -59,4 +59,4 @@ machine = GraphMachine(
     auto_transitions=False,
     show_conditions=True,
 )
-machine.get_graph().draw("finite_state_machine.png", prog="dot", format="png")
+machine.get_graph().draw("fsm.png", prog="dot", format="png")
