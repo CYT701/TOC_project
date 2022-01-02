@@ -12,7 +12,26 @@ coffee
 @709xibzl
 #### QR code
 ![qrcode](./img/qrcode.png)
-### 功能及操作
+### 說明
+#### user
+輸入[沖煮技巧]->state1
+輸入[台南咖啡推薦]->state2->user
+輸入[說明]->state3->user
+#### state1 沖煮技巧
+輸入[淺焙]->state_lightroast
+輸入[中焙]->state_mediumroast
+輸入[深焙]->state_cityroast
+輸入[離開]->user
+輸入[說明]->state3
+#### state_lightroast 淺焙
+輸入[ok]->state1
+#### state_mediumroast 中焙
+輸入[ok]->state1
+#### state_cityroast 深焙
+輸入[ok]->state1
+#### state2 台南咖啡推薦
+#### state3 說明
+### 實際運作
 ![feature](./img/demo.jpg)
 
 將會不定時更新咖啡廳資訊!敬請期待!
