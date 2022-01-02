@@ -23,6 +23,10 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "淺焙"
 
+    def is_going_to_state_mediumroast(self, event):
+        text = event.message.text
+        return text.lower() == "中焙"
+
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
@@ -57,9 +61,19 @@ class TocMachine(GraphMachine):
         print("I'm entering state_lightroast")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "水溫:90度\n研磨度:二砂糖粗細")
+        send_text_message(reply_token, "咖啡豆16g\n水溫:92~94度\n研磨度:二砂糖粗細\n悶蒸:30~50秒(視排氣狀況)\n手法:中小水由中心向外慢繞至150cc，待濾杯中液體流下一半後再注水至240cc")
+        self.go_back()
+
+    def on_enter_state_mediumroast(self, event):
+        print("I'm entering state_lightroast")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "咖啡豆16g\n水溫:88~90度\n研磨度:二砂糖粗細\n悶蒸:20~40秒\n手法:中水由中心向外慢繞至150cc，待濾杯中液體流下一半後再中心注大水至240cc")
         self.go_back()
 
     def on_exit_state_lightroast(self):
         print("Leaving state_lightroast")
+
+    def on_exit_state_mediumroast(self):
+        print("Leaving state_mediumroast")
 
