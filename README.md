@@ -17,4 +17,4 @@ coffee
 
 將會不定時更新咖啡廳資訊!敬請期待!
 ## Finite State Machine
-![fsm](./img/show-fsm.png)
+![fsm](./img/fsm.png)
