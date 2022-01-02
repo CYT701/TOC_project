@@ -20,7 +20,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state_light_roast(self, event):
         text = event.message.text
-        return text.lower() == "淺焙"
+        return text.lower() == "參數"
 
     def is_going_to_backstate1(self, event):
         text = event.message.text
