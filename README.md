@@ -12,7 +12,7 @@ coffee
 @709xibzl
 #### QR code
 ![qrcode](./img/qrcode.png)
-### 說明
+### 操作說明
 #### user
 * 輸入[沖煮技巧]->state1  
 * 輸入[台南咖啡推薦]->state2->user  
