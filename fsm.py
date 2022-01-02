@@ -89,7 +89,7 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_text_message(reply_token, "首頁，輸入[說明]以獲得更多資訊")
-        self.go_back()
+
 
 
 
