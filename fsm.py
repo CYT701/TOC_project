@@ -23,10 +23,6 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "淺焙"
 
-    def is_going_to_state_user(self, event):
-        text = event.message.text
-        return text.lower() == "離開"
-
     def on_enter_state1(self, event):
         print("I'm entering state1")
 

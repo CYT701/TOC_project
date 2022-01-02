@@ -33,14 +33,7 @@ machine = GraphMachine(
             "dest": "state_lightroast",
             "conditions": "is_going_to_state_lightroast",
         },
-        {
-            "trigger": "advance",
-            "source": "state1",
-            "dest": "user",
-            "conditions": "is_going_to_state_user",
-        },
-
-        {"trigger": "go_back", "source": ["state1","state_lightroast","state2", "state3"], "dest": "user"},
+        {"trigger": "go_back", "source": ["state_lightroast","state2", "state3"], "dest": "user"},
         #{"trigger": "go_back", "source": "state_light_roast", "dest": "state1"},
     ],
     initial="user",
