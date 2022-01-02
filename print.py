@@ -7,7 +7,7 @@ import pygraphviz as pgv
 #    raise
 #import requests
 machine = GraphMachine(
-    states=["user", "state1", "state2","state3","state_lightroast"],
+    states=["user", "state1", "state2","state3","state_lightroast","state_mediumroast"],
     transitions=[
         {
             "trigger": "advance",
